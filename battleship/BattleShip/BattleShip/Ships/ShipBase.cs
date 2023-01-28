@@ -11,7 +11,7 @@ namespace Ships
         public string Name { get; set; }
         public int Width { get; set; }
         public int Hits { get; set; }
-        public OccupationType OccupationType { get; set; }
+        public LocaleType LocaleType { get; set; }
         // retorna TRUE caso o numero de acertos forem maior ou igual ao seu tamanho
         public bool shipIsDead
         {
