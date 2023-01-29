@@ -1,0 +1,15 @@
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\bin\Debug\net7.0\BattleShip.exe
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\bin\Debug\net7.0\BattleShip.deps.json
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\bin\Debug\net7.0\BattleShip.runtimeconfig.json
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\bin\Debug\net7.0\BattleShip.dll
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\bin\Debug\net7.0\BattleShip.pdb
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\BattleShip.csproj.AssemblyReference.cache
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\BattleShip.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\BattleShip.AssemblyInfoInputs.cache
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\BattleShip.AssemblyInfo.cs
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\BattleShip.csproj.CoreCompileInputs.cache
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\BattleShip.dll
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\refint\BattleShip.dll
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\BattleShip.pdb
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\BattleShip.genruntimeconfig.cache
+C:\Users\eweri\Desktop\hub\HubDeJogosShapCorders\battleship\BattleShip\BattleShip\obj\Debug\net7.0\ref\BattleShip.dll

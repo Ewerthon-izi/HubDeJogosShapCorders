@@ -9,13 +9,13 @@ using System.Xml.Linq;
 
 namespace BattleShip.Ships
 {
-    public class Submarine : Ship
+    public class Battleship : Ship
     {
-        public Submarine()
+        public Battleship()
         {
-            Name = "Submarine";
-            Width = 2;
-            LocaleType = LocaleType.Submarine;
+            Name = "Battleship";
+            Width = 4;
+            LocaleType = LocaleType.Battleship;
         }
     }
 }
