@@ -1,38 +1,71 @@
 ﻿using Hub.Games;
 using Hub.OldWoman;
 using System.Security.AccessControl;
-
+using System.Security.Cryptography.X509Certificates;
 
 namespace BattleShip
 {
     class Program
     {
 
-        static void PlayOldWoman(Player player1)
+        static void PlayOldWoman(Player player1, List<Player> usuarios)
         {
+            string nome;
+            string password;
+            char option;
             Console.WriteLine("Bem vindo ao jogo da veia");
+            Player player2 = null;
 
-            //Set player attributes
-            Player playerTwo = new Player("Teste2", "54321");
-
-            Console.WriteLine("Player 2, Entre com seu nome");
-            playerTwo.Name = Console.ReadLine();
+            do
+            {
+                Console.WriteLine("Deseja entrar como convidado? y/n");
+                option = char.Parse(Console.ReadLine());
+                if (option == 'y')
+                {
+                    player2 = new Player("guest", "guest");
+                }
+                else
+                {
+                    Console.WriteLine("Efetuar login:");
+                    Console.Write("Nome: ");
+                    nome = Console.ReadLine();
+                    Console.Write("password: ");
+                    password = Console.ReadLine();
+                    //Shalow copy, caso eu altere o currentUser ira alterar o usurio original tbm
+                    player2 = (Player)usuarios.FirstOrDefault(x => x.Name == nome);
+                    if (player2 == null)
+                        Console.WriteLine("Email ou senha invalida");
+                    else
+                    {
+                        if (player2.Login(nome, password))
+                            Console.WriteLine("Login efetuado com sucesso");
+                        else
+                        {
+                            Console.WriteLine("Nome ou senha invalida");
+                            player2 = null;
+                        }
+                    }
+                }
+                Console.Clear();
+            } while (player2 == null);
 
             player1.Marker = "X";
-            playerTwo.Marker = "O";
+            player2.Marker = "O";
 
             player1.IsTurn = true;
-            playerTwo.IsTurn = false;
+            player2.IsTurn = false;
 
             //Initiate game play
-            GameOldWoman currentGame = new GameOldWoman(player1, playerTwo);
+            GameOldWoman currentGame = new GameOldWoman(player1, player2);
 
             Player winner = currentGame.Play();
+            winner.ContWins++;
 
             //Display game results
             if (winner != null)
             {
                 Console.WriteLine($"{winner.Name} venceu!");
+                Console.WriteLine($"{winner.Name} esta com {winner.ContWins} vitorias");
             }
             else
             {
@@ -41,28 +74,65 @@ namespace BattleShip
 
         }
 
-        static void PlayBattleShip()
+        static void PlayBattleShip(Player player1, List<Player> usuarios)
         {
             int player1Wins = 0, player2Wins = 0;
+            Player player2 = null;
+            string nome;
+            string password;
+            char option;
+
+            do
+            {
+                Console.WriteLine("Deseja entrar como convidado? y/n");
+                option = char.Parse(Console.ReadLine());
+                if (option == 'y')
+                {
+                    player2 = new Player("guest", "guest");
+                }
+                else
+                {
+                    Console.WriteLine("Efetuar login:");
+                    Console.Write("Nome: ");
+                    nome = Console.ReadLine();
+                    Console.Write("password: ");
+                    password = Console.ReadLine();
+                    //Shalow copy, caso eu altere o currentUser ira alterar o usurio original tbm
+                    player2 = (Player)usuarios.FirstOrDefault(x => x.Name == nome);
+                    if (player2 == null)
+                        Console.WriteLine("Email ou senha invalida");
+                    else
+                    {
+                        if (player2.Login(nome, password))
+                            Console.WriteLine("Login efetuado com sucesso");
+                        else
+                        {
+                            Console.WriteLine("Nome ou senha invalida");
+                            player2 = null;
+                        }
+                    }
+                }
+                Console.Clear();
+            } while (player2 == null);
+
             Console.WriteLine("Quantas jogos deseja jogar?");
             var numGames = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < numGames; i++)
             {
-                GameShip game1 = new GameShip();
+                GameShip game1 = new GameShip(player1, player2);
                 game1.PlayToEnd();
                 if (game1.Player1.HasLost)
                 {
-                    player2Wins++;
+                    player2.ContWins++;
                 }
                 else
                 {
-                    player1Wins++;
+                    player1.ContWins++;
                 }
             }
-
-            Console.WriteLine("Player 1 Wins: " + player1Wins.ToString());
-            Console.WriteLine("Player 2 Wins: " + player2Wins.ToString());
+            Console.WriteLine("Player 1 Wins: " + player1.ContWins);
+            Console.WriteLine("Player 2 Wins: " + player2.ContWins);
         }
 
         static void ShowMenuBeforeLogin()
@@ -78,6 +148,8 @@ namespace BattleShip
             Console.WriteLine("Qual jogo deseja jogar?");
             Console.WriteLine("1 - Battleship");
             Console.WriteLine("2 - Jogo Da velha");
+            Console.WriteLine("3 - Sair da conta");
+            Console.WriteLine("0 - Para sair do programa");
             Console.Write("Digite a opção desejada: ");
         }
 
@@ -140,10 +212,16 @@ namespace BattleShip
                     switch (option)
                     {
                         case 1:
-                            PlayBattleShip();
+                            PlayBattleShip(currentUser, usuarios);
                             break;
                         case 2:
-                            PlayOldWoman(currentUser);
+                            PlayOldWoman(currentUser, usuarios);
+                            break;
+                        case 3:
+                            currentUser = null;
+                            break;
+                        case 0:
+                            Console.WriteLine("Encerrando o programa");
                             break;
                         default:
                             Console.WriteLine("Codigo digitado não encontrado");

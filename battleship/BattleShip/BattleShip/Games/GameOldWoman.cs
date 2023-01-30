@@ -26,8 +26,6 @@ namespace Hub.OldWoman
 
         public Player Play()
         {
-
-            //DONE: Complete this method and utilize the rest of the class structure to play the game.
             int maxTurnCount = 9;
             Player currentPlayer = null;
             int i = 0;

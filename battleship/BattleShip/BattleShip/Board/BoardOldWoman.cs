@@ -9,17 +9,16 @@ namespace OldWoman.Board
     public class BoardOldWoman
     {
 
-        // Tic Tac Toe Gameboard states
+        // Estado do tabuleiro
         public string[,] GameBoard = new string[,]
         {
             {"1", "2", "3"},
             {"4", "5", "6"},
             {"7", "8", "9"},
         };
-        // Prints current board to the console
+        // printa o tabuleiro atual
 		public void DisplayBoard()
         {
-            //Done: Output the board to the console
             Console.WriteLine();
 
             for (int i = 0; i < GameBoard.GetLength(0); i++)

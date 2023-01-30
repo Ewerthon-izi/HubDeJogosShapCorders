@@ -12,10 +12,10 @@ namespace Hub.Games
         public Player Player1 { get; set; }
         public Player Player2 { get; set; }
 
-        public GameShip()
+        public GameShip(Player player1, Player player2)
         {
-            Player1 = new Player("Ewerthon", "12345");
-            Player2 = new Player("Joao", "54321");
+            Player1 = (Player)player1;
+            Player2 = (Player)player2;
 
             Player1.PlaceShips();
             Player2.PlaceShips();

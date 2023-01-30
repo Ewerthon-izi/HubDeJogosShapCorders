@@ -21,6 +21,7 @@ namespace Hub.Games
         public GameBoard GameBoard { get; set; }
         public FiringBoard FiringBoard { get; set; }
         public List<Ship> Ships { get; set; }
+        public int ContWins;
         public bool HasLost
         {
             get
@@ -44,6 +45,7 @@ namespace Hub.Games
             GameBoard = new GameBoard();
             FiringBoard = new FiringBoard();
             Password = password;
+            ContWins = 0;
         }
 
         public bool Login(string name, string password)
@@ -59,7 +61,7 @@ namespace Hub.Games
         public void OutputBoards()
         {
             Console.WriteLine(Name);
-            Console.WriteLine("Seu tabuleiro:                          Tabuleiro do oponente:");
+            Console.WriteLine($"Tabuleiro de {Name}:                          Tabuleiro do adversario:");
             for (int row = 1; row <= 10; row++)
             {
                 for (int ownColumn = 1; ownColumn <= 10; ownColumn++)
@@ -205,7 +207,7 @@ namespace Hub.Games
             Coordinates desiredCoordinate = null;
             while (desiredCoordinate is null)
             {
-                Console.WriteLine("Please select a location");
+                Console.WriteLine("Selecione a coordenada desejada");
                 Int32.TryParse(Console.ReadLine(), out int Coordinates);
                 desiredCoordinate = CoordinatesForNumber(Coordinates);
             }
@@ -235,7 +237,7 @@ namespace Hub.Games
         {
             IsTurn = true;
 
-            Console.WriteLine($"{Name} it is your turn");
+            Console.WriteLine($"Tueno de {Name}");
 
             Coordinates Coordinates = GetCoordinates(board);
 
@@ -245,7 +247,7 @@ namespace Hub.Games
             }
             else
             {
-                Console.WriteLine("This space is already occupied");
+                Console.WriteLine("Jogada invalida");
             }
         }
 
