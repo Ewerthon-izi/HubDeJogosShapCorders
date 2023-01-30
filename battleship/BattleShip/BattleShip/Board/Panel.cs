@@ -19,12 +19,8 @@ namespace BattleShip.Board
 
         public string Status{
             get{
-                // LocaleType.GetAttribute<typeof(DescriptionAttribute)>().Description;
-                var fieldInfo = LocaleType.GetType().GetField(LocaleType.ToString());
+                return LocaleType.GetAttributeOfType<DescriptionAttribute>().Description;
 
-                var descriptionAttributes = (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
-
-                return descriptionAttributes.Length > 0 ? descriptionAttributes[0].Description : LocaleType.ToString();
             }
         }
 

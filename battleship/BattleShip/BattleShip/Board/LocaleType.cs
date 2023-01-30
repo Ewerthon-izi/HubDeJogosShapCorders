@@ -27,4 +27,11 @@ namespace BattleShip.Board
         [Description("M")]
         Miss
     }
+
+    public enum ShotResult
+    {
+        Miss,
+        Hit
+    }
+
 }
