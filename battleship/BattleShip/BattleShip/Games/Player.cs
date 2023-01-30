@@ -1,6 +1,9 @@
 ﻿using BattleShip.Board;
 using BattleShip.Ships;
+using Hub.Board;
 using Ships;
+using Hub.OldWoman;
+using OldWoman.Board;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +11,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BattleShip.Games
+
+namespace Hub.Games
 {
     public class Player
     {
@@ -24,6 +28,9 @@ namespace BattleShip.Games
             }
         }
 
+        public string Marker { get; set; }
+        public bool IsTurn { get; set; }
+
         public Player(string name)
         {
             Name = name;
@@ -37,6 +44,8 @@ namespace BattleShip.Games
             FiringBoard = new FiringBoard();
         }
 
+
+        //Funções para a batalha naval
         public void OutputBoards()
         {
             Console.WriteLine(Name);
@@ -178,5 +187,57 @@ namespace BattleShip.Games
                     break;
             }
         }
+
+        //Funçoes para o jogo da velha
+
+        public Coordinates GetCoordinates(BoardOldWoman board)
+        {
+            Coordinates desiredCoordinate = null;
+            while (desiredCoordinate is null)
+            {
+                Console.WriteLine("Please select a location");
+                Int32.TryParse(Console.ReadLine(), out int Coordinates);
+                desiredCoordinate = CoordinatesForNumber(Coordinates);
+            }
+            return desiredCoordinate;
+
+        }
+
+        public static Coordinates CoordinatesForNumber(int Coordinates)
+        {
+            switch (Coordinates)
+            {
+                case 1: return new Coordinates(0, 0); // Top Left
+                case 2: return new Coordinates(0, 1); // Top Middle
+                case 3: return new Coordinates(0, 2); // Top Right
+                case 4: return new Coordinates(1, 0); // Middle Left
+                case 5: return new Coordinates(1, 1); // Middle Middle
+                case 6: return new Coordinates(1, 2); // Middle Right
+                case 7: return new Coordinates(2, 0); // Bottom Left
+                case 8: return new Coordinates(2, 1); // Bottom Middle 
+                case 9: return new Coordinates(2, 2); // Bottom Right
+
+                default: return null;
+            }
+        }
+
+        public void TakeTurn(BoardOldWoman board)
+        {
+            IsTurn = true;
+
+            Console.WriteLine($"{Name} it is your turn");
+
+            Coordinates Coordinates = GetCoordinates(board);
+
+            if (Int32.TryParse(board.GameBoard[Coordinates.Row, Coordinates.Column], out int _))
+            {
+                board.GameBoard[Coordinates.Row, Coordinates.Column] = Marker;
+            }
+            else
+            {
+                Console.WriteLine("This space is already occupied");
+            }
+        }
+
     }
 }

@@ -5,14 +5,14 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleShip.Games
+namespace Hub.Games
 {
-    public class Game
+    public class GameShip
     {
         public Player Player1 { get; set; }
         public Player Player2 { get; set; }
 
-        public Game()
+        public GameShip()
         {
             Player1 = new Player("Amy");
             Player2 = new Player("Vince");

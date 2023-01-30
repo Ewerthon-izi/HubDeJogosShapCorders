@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eweri\\Desktop\\hub\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\BattleShip.csproj",
-      "projectName": "BattleShip",
-      "projectPath": "C:\\Users\\eweri\\Desktop\\hub\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\BattleShip.csproj",
+      "projectUniqueName": "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\Hub.csproj",
+      "projectName": "Hub",
+      "projectPath": "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\Hub.csproj",
       "packagesPath": "C:\\Users\\eweri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eweri\\Desktop\\hub\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\obj\\",
+      "outputPath": "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

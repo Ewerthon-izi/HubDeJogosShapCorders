@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\BattleShip.csproj": {}
+    "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\Hub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\BattleShip.csproj": {
+    "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\Hub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\BattleShip.csproj",
-        "projectName": "BattleShip",
-        "projectPath": "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\BattleShip.csproj",
+        "projectUniqueName": "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\Hub.csproj",
+        "projectName": "Hub",
+        "projectPath": "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\Hub.csproj",
         "packagesPath": "C:\\Users\\eweri\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\eweri\\Desktop\\Hub de jogos\\HubDeJogosShapCorders\\battleship\\BattleShip\\BattleShip\\obj\\",
         "projectStyle": "PackageReference",
