@@ -14,8 +14,8 @@ namespace Hub.Games
 
         public GameShip()
         {
-            Player1 = new Player("Amy");
-            Player2 = new Player("Vince");
+            Player1 = new Player("Ewerthon", "12345");
+            Player2 = new Player("Joao", "54321");
 
             Player1.PlaceShips();
             Player2.PlaceShips();

@@ -17,6 +17,7 @@ namespace Hub.Games
     public class Player
     {
         public string Name { get; set; }
+        public string Password { get; set; }
         public GameBoard GameBoard { get; set; }
         public FiringBoard FiringBoard { get; set; }
         public List<Ship> Ships { get; set; }
@@ -31,7 +32,7 @@ namespace Hub.Games
         public string Marker { get; set; }
         public bool IsTurn { get; set; }
 
-        public Player(string name)
+        public Player(string name, string password)
         {
             Name = name;
             Ships = new List<Ship>()
@@ -42,8 +43,17 @@ namespace Hub.Games
             };
             GameBoard = new GameBoard();
             FiringBoard = new FiringBoard();
+            Password = password;
         }
 
+        public bool Login(string name, string password)
+        {
+            if (!(this.Name == name))
+                return false;
+            if (!(this.Password == password))
+                return false;
+            return true;
+        }
 
         //Funções para a batalha naval
         public void OutputBoards()
