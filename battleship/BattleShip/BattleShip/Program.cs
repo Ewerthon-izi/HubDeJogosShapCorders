@@ -2,6 +2,9 @@
 using Hub.OldWoman;
 using System.Security.AccessControl;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Runtime.InteropServices.JavaScript;
 
 namespace BattleShip
 {
@@ -233,6 +236,11 @@ namespace BattleShip
                 }
                 Console.Clear();
             } while (currentUser == null && option != 0);
+            List<Player> OrderUsers = usuarios.OrderByDescending(x => x.ContWins).ToList();
+            OrderUsers.ForEach(Console.WriteLine);
+            string fileName = "RankUsers.json";
+            string jsonString = JsonSerializer.Serialize(OrderUsers);
+            File.WriteAllText(fileName, jsonString);
         }
     }
 }

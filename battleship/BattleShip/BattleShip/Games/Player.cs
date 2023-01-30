@@ -250,6 +250,9 @@ namespace Hub.Games
                 Console.WriteLine("Jogada invalida");
             }
         }
-
+        public override string ToString()
+        {
+            return $"Nome: {Name}\nVitorias: {ContWins}";
+        }
     }
 }
